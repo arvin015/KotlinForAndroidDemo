@@ -29,4 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|right" />
 
+    <com.arvin.kotlinforandroiddemo.customview.BubbleView
+        android:id="@+id/bubbleView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center" />
+
 </FrameLayout>
