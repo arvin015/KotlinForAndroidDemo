@@ -47,7 +47,7 @@ class BubbleView : View {
             while (true) {
                 if (needPlay) {
                     Thread.sleep(60)
-                    if (Random().nextFloat() > 0.95F) createBubbles()
+                    if (Random().nextFloat() > 0.92F) createBubbles()
                     postInvalidate()
                 }
             }
@@ -122,7 +122,7 @@ class BubbleView : View {
 
         init {
             do {
-                speedX = (Random().nextFloat() * maxSpeedX) - 1.8F
+                speedX = (Random().nextFloat() * maxSpeedX) - 1.5F
                 speedY = 0.5F + Random().nextFloat() * maxSpeedY
             } while (Math.abs(speedX) >= Math.abs(speedY))
 

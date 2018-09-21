@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.arvin.kotlinforandroiddemo.entity.LatestNews
 import kotlinx.android.synthetic.main.test.*
+import java.util.*
 
 class TestActivity : BaseActivity<ITestView, TestPresenter>(), ITestView {
 
@@ -23,6 +24,15 @@ class TestActivity : BaseActivity<ITestView, TestPresenter>(), ITestView {
             loadBtn.isEnabled = false
 
             bubbleView.startBubbling()
+
+            Thread {
+                while (true) {
+                    Thread.sleep(200)
+                    if (Random().nextInt() > 8) {
+                        bulletView.createBullet("hello world")
+                    }
+                }
+            }.start()
         }
 
         testImage.setOnClickListener {
@@ -32,6 +42,8 @@ class TestActivity : BaseActivity<ITestView, TestPresenter>(), ITestView {
                 })
             })
         }
+
+
     }
 
     override fun onPause() {
